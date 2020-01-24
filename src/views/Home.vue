@@ -63,7 +63,7 @@
               </v-card-title>
               <v-card-actions>
                 <v-layout align-center column justify-center>
-                  <v-btn v-bind:href="machine.link" medium dark class="white--text">Visit</v-btn>
+                  <v-btn v-bind:href="machine.link" medium dark class="white--text">View</v-btn>
                 </v-layout>
               </v-card-actions>
             </v-card>
