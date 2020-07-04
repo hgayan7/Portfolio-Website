@@ -38,8 +38,8 @@ export default {
           icon: "golf_course",
           text: "Certifications",
           route: "/certifications"
-        },
-        { icon: "insert_comment", text: "Contact", route: "/contact" }
+        }
+        // { icon: "insert_comment", text: "Contact", route: "/contact" }
       ]
     };
   }

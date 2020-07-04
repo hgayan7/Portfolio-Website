@@ -31,7 +31,7 @@
         </v-flex>
         <v-flex xs12 sm6 md4 lg3 ma-5 v-for="android in androidCards" :key="android.name">
           <v-hover>
-            <v-card class="pa-2" slot-scope="{hover}" :class="`elevation-${hover ? 12 : 2}`">
+            <v-card class="pa-2" slot-scope="{hover}" :class="`elevation-${hover ? 8 : 2}`">
               <v-card-title>
                 <div>
                   <h3 class="headline mb-0">{{android.heading}}</h3>
@@ -50,14 +50,48 @@
 
       <v-layout row wrap align-center justify-center>
         <v-flex xs12 sm12 lg12>
+          <p class="font-weight-thin mt-2 ml-4" style="font-size:35px;">Technical Writing</p>
+        </v-flex>
+        <v-flex
+          xs12
+          sm6
+          md4
+          lg3
+          ma-5
+          v-for="techWriting in techWritingCards"
+          :key="techWriting.heading"
+        >
+          <v-hover>
+            <v-card class="pa-2" slot-scope="{hover}" :class="`elevation-${hover ? 8 : 2}`">
+              <v-card-title>
+                <div>
+                  <h3 class="headline mb-2">{{techWriting.heading}}</h3>
+                  <div>{{techWriting.content}}</div>
+                </div>
+              </v-card-title>
+              <div class="text-center">
+                <v-chip v-for="tag in techWriting.tags" :key="tag" class="ma-2">{{tag}}</v-chip>
+              </div>
+              <v-card-actions>
+                <v-layout align-center column justify-center>
+                  <v-btn v-bind:href="techWriting.link" medium dark class="white--text">Read More</v-btn>
+                </v-layout>
+              </v-card-actions>
+            </v-card>
+          </v-hover>
+        </v-flex>
+      </v-layout>
+
+      <v-layout row wrap align-center justify-center>
+        <v-flex xs12 sm12 lg12>
           <p class="font-weight-thin mt-2 ml-4" style="font-size:35px;">Machine Learning</p>
         </v-flex>
         <v-flex xs12 sm6 md4 lg3 ma-5 v-for="machine in machineCards" :key="machine.heading">
           <v-hover>
-            <v-card class="pa-2" slot-scope="{hover}" :class="`elevation-${hover ? 12 : 2}`">
+            <v-card class="pa-2" slot-scope="{hover}" :class="`elevation-${hover ? 8 : 2}`">
               <v-card-title>
                 <div>
-                  <h3 class="headline mb-0">{{machine.heading}}</h3>
+                  <h3 class="headline mb-2">{{machine.heading}}</h3>
                   <div>{{machine.content}}</div>
                 </div>
               </v-card-title>
@@ -77,10 +111,10 @@
         </v-flex>
         <v-flex xs12 sm6 md4 lg3 ma-5 v-for="block in blockchainCards" :key="block.heading">
           <v-hover>
-            <v-card class="pa-2" slot-scope="{hover}" :class="`elevation-${hover ? 12 : 2}`">
+            <v-card class="pa-2" slot-scope="{hover}" :class="`elevation-${hover ? 8 : 2}`">
               <v-card-title>
                 <div>
-                  <h3 class="headline mb-0">{{block.heading}}</h3>
+                  <h3 class="headline mb-2">{{block.heading}}</h3>
                   <div>{{block.content}}</div>
                 </div>
               </v-card-title>
@@ -100,10 +134,10 @@
         </v-flex>
         <v-flex xs12 sm6 md4 lg3 ma-5 v-for="block in iosCards" :key="block.heading">
           <v-hover>
-            <v-card class="pa-2" slot-scope="{hover}" :class="`elevation-${hover ? 12 : 2}`">
+            <v-card class="pa-2" slot-scope="{hover}" :class="`elevation-${hover ? 8 : 2}`">
               <v-card-title>
                 <div>
-                  <h3 class="headline mb-0">{{block.heading}}</h3>
+                  <h3 class="headline mb-2">{{block.heading}}</h3>
                   <div>{{block.content}}</div>
                 </div>
               </v-card-title>
@@ -123,10 +157,10 @@
         </v-flex>
         <v-flex xs12 sm6 md4 lg3 ma-5 v-for="block in flutterCards" :key="block.heading">
           <v-hover>
-            <v-card class="pa-2" slot-scope="{hover}" :class="`elevation-${hover ? 12 : 2}`">
+            <v-card class="pa-2" slot-scope="{hover}" :class="`elevation-${hover ? 8 : 2}`">
               <v-card-title>
                 <div>
-                  <h3 class="headline mb-0">{{block.heading}}</h3>
+                  <h3 class="headline mb-2">{{block.heading}}</h3>
                   <div>{{block.content}}</div>
                 </div>
               </v-card-title>
@@ -147,6 +181,47 @@
 export default {
   data() {
     return {
+      techWritingCards: [
+        {
+          heading:
+            "Working with Firebase ML Kit Barcode scanner and Room Database",
+          content:
+            "Extract data from barcode and save the inforamation locally using the Room Persistence Library.",
+          link: "https://eidk.org/Firebase-BarcodeScanning-saving-locally.html",
+          tags: ["ML Kit", "Firebase", "Room Persistance Library", "Kotlin"]
+        },
+        {
+          heading:
+            "Working with Local notification and Firebase push notification",
+          content:
+            "Sending push notification using FCM and also about triggering a local notification.",
+          link:
+            "https://eidk.org/Firebase-push-local-notfications-android-eidk.html",
+          tags: ["Local notification", "Push notification", "FCM", "Kotlin"]
+        },
+        {
+          heading: "Data Visualization using Matplotlib",
+          content:
+            "Data visualization is a key aspect in data analysis which allows us to represent data in a visual format.",
+          link: "https://eidk.org/data-visualization-using-matplotlib.html",
+          tags: ["Matplotlib", "Visualization", "Python"]
+        },
+        {
+          heading: "Neural Network in Pytorch using Google Colab",
+          content:
+            "Building a deep learning model and understanding the building blocks on which that model will be built upon.",
+          link:
+            "https://eidk.org/Neural-Network-in-PyTorch-Using-Google-CoLab.html",
+          tags: ["Pytorch", "Deep Learning", "Google Colab", "Python"]
+        },
+        {
+          heading: "Working with Retrofit in Kotlin using MVVM architecture",
+          content:
+            "Fetching JSON data from an API using Retrofit, Coroutines, Glide and updating the views using LiveData.",
+          link: "https://eidk.org/Working-with-Retorfit-kotlin-eidk.html",
+          tags: ["Coroutines", "LiveData", "Retrofit", "Kotlin"]
+        }
+      ],
       androidCards: [
         {
           heading: "Picfuse",
