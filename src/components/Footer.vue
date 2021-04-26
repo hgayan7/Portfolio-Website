@@ -3,7 +3,7 @@
     <v-layout justify-center row wrap>
       <div>
         <p>
-          &copy;2020 -
+          &copy;2021 -
           <b>Himshikhar Gayan</b>
         </p>
       </div>
